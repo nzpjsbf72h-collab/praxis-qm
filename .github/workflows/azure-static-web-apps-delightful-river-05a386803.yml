@@ -29,9 +29,14 @@ jobs:
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "build" # Built app content directory - optional
+          api_location: "api" # Api source code path - optional
+          output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env:
+          VITE_AAD_TENANT_ID: "36a02a57-4839-4517-b9fe-c02e20eca407"
+          VITE_AAD_CLIENT_ID: "204f2bf6-8ee4-4766-b1e7-b5fa4661feb6"
+          VITE_API_BASE_URL: ""
+          VITE_USE_MOCK_AUTH: "false"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
