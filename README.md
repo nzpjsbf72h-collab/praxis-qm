@@ -35,5 +35,5 @@ VITE_API_BASE_URL=<https://your-api.azurewebsites.net>
 - Backend-API (Node/Fastify) anschließen und in `VITE_API_BASE_URL` referenzieren.
 - Rollen/Claims in Entra ID definieren und im UI auswerten.
 
-## Agentic OS (lokale Übersicht)
-Kleine Zusatz-App nur für den eigenen Rechner: `node agentic-os/server.mjs` → http://127.0.0.1:4747. Details in [agentic-os/README.md](agentic-os/README.md).
+## Agentic OS (lokales Cockpit)
+Zusatz-App nur für den eigenen Rechner: `node agentic-os/server.mjs`, dann die Adresse aus dem Terminal öffnen. Details in [agentic-os/README.md](agentic-os/README.md).

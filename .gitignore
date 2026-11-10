@@ -27,3 +27,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Agentic OS: Laufzeit-Daten bleiben auf dem Rechner (Aufgaben, Limits, Zugangsschlüssel)
+agentic-os/daten/*
+!agentic-os/daten/.gitkeep
+vorschlaege/*
+!vorschlaege/.gitkeep

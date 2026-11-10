@@ -113,3 +113,93 @@ h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: 
   main { padding: 20px 16px 40px; }
   .liste li { flex-direction: column; gap: 2px; }
 }
+
+/* ---------- Ergänzungen: Agenten, Gehirn, Nacht, Limits ---------- */
+
+.blau { color: var(--akzent); }
+.gross { font-size: 17px; }
+.abstand { margin-top: 8px; }
+.versteckt { display: none; }
+.kachel-link { display: block; color: inherit; text-decoration: none; }
+.kachel-link:hover { border-color: var(--akzent); }
+.kachel-link:focus-visible, .knopf:focus-visible, .eingabe:focus-visible, .knoten:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--akzent); outline-offset: 2px;
+}
+main > #inhalt > * + * { margin-top: 14px; }
+main > #inhalt > h2 { margin-top: 28px; }
+
+.knopf {
+  font: inherit; font-weight: 600; cursor: pointer;
+  padding: 8px 16px; border-radius: 8px;
+  border: 1px solid var(--linie); background: var(--flaeche); color: var(--text);
+}
+.knopf:hover:not(:disabled) { border-color: var(--akzent); }
+.knopf:disabled { opacity: 0.45; cursor: not-allowed; }
+.knopf.haupt { background: var(--akzent); border-color: var(--akzent); color: #fff; }
+@media (prefers-color-scheme: dark) { .knopf.haupt { color: #0b0e13; } }
+.knopf.klein { padding: 4px 10px; font-size: 13px; margin-top: 8px; }
+.knopf.verweis { border: 0; background: none; padding: 0 2px; color: var(--akzent); font-weight: 600; text-decoration: underline; }
+.knopf.verweis.breit { width: 190px; flex-shrink: 0; text-align: left; }
+.knopfzeile { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+
+/* Agenten */
+.drei-spalten { display: grid; gap: 14px; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+.zwei-spalten { display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.spalte h2 { margin-top: 22px; }
+.eingabe {
+  width: 100%; font: inherit; color: var(--text); background: var(--grund);
+  border: 1px solid var(--linie); border-radius: 8px; padding: 9px 10px; margin: 8px 0 10px; resize: vertical;
+}
+.stapel { display: flex; flex-direction: column; gap: 10px; }
+.aufgabe { border: 1px solid var(--linie); border-radius: 10px; padding: 10px 12px; overflow-wrap: anywhere; }
+details { margin-top: 8px; }
+summary { cursor: pointer; color: var(--leise); font-size: 13px; }
+.ausgabe {
+  margin: 6px 0 0; padding: 10px; max-height: 320px; overflow: auto;
+  background: var(--grund); border-radius: 8px; white-space: pre-wrap; overflow-wrap: anywhere;
+  font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* Gehirn */
+.netz { width: 100%; height: auto; display: block; }
+.kante { stroke: var(--linie); stroke-width: 1.5; }
+.kante.aktiv { stroke: var(--akzent); stroke-width: 2.5; }
+.knoten { cursor: pointer; }
+.knoten .treffer { fill: transparent; }
+.knoten .punkt-netz { fill: var(--akzent); stroke: var(--flaeche); stroke-width: 2; }
+.knoten.fehlt { cursor: default; }
+.knoten.fehlt .punkt-netz { fill: var(--flaeche); stroke: var(--grau); stroke-dasharray: 3 3; }
+.knoten.gewaehlt .punkt-netz { stroke: var(--text); stroke-width: 3; }
+.knoten:hover .punkt-netz { stroke: var(--text); }
+.knoten-text { fill: var(--text); font-size: 13px; paint-order: stroke; stroke: var(--flaeche); stroke-width: 4px; stroke-linejoin: round; }
+.knoten.fehlt .knoten-text { fill: var(--leise); }
+.notiz-text { white-space: pre-wrap; margin-top: 8px; overflow-wrap: anywhere; }
+
+/* Nacht */
+.karte .aenderung { border-top: 1px solid var(--linie); margin-top: 12px; padding-top: 10px; }
+.karte .warnung { margin: 12px 0 0; }
+
+/* Limits */
+.kachel-hoch { border-color: var(--gelb); }
+.balken { width: 100%; height: 12px; display: block; margin: 10px 0 8px; }
+.balken-grund { fill: var(--linie); }
+.balken-wert { fill: var(--akzent); }
+.balken-wert.hoch { fill: var(--gelb); }
+.balken-strich { fill: var(--text); }
+.verlauf-huelle { position: relative; }
+.verlauf { width: 100%; height: auto; display: block; }
+.gitter { stroke: var(--linie); stroke-width: 1; }
+.schwelle { stroke: var(--gelb); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.achse { fill: var(--leise); font-size: 11px; }
+.linie { fill: none; stroke: var(--akzent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.linie-punkt { fill: var(--akzent); stroke: var(--flaeche); stroke-width: 2; }
+.faden { stroke: var(--leise); stroke-width: 1; }
+.fang { fill: transparent; }
+.tipp {
+  position: absolute; top: 4px; pointer-events: none; white-space: nowrap;
+  background: var(--text); color: var(--flaeche); font-size: 12px; padding: 3px 8px; border-radius: 6px;
+}
+.tipp.versteckt, .faden.versteckt, .linie-punkt.versteckt { display: none; }
+
+@media (max-width: 1000px) { .drei-spalten { grid-template-columns: 1fr; } }
+@media (max-width: 800px) { .zwei-spalten { grid-template-columns: 1fr; } }

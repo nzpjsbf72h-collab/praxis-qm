@@ -1,4 +1,0 @@
-[
-  { "uhrzeit": "02:00", "aufgabe": "Datensicherung erstellen", "agent": "Beispiel-Agent Sicherung", "aktiv": true, "letzterLauf": "2026-11-10T03:05:00", "ergebnis": "erfolgreich" },
-  { "uhrzeit": "04:30", "aufgabe": "Zusammenfassung für den Morgen schreiben", "agent": "Beispiel-Agent Recherche", "aktiv": false, "letzterLauf": null, "ergebnis": "" }
-]
