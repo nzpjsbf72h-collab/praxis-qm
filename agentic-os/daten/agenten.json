@@ -1,0 +1,6 @@
+[
+  { "name": "Beispiel-Agent Recherche", "aufgabe": "Sammelt neue Vorgaben zum Qualitätsmanagement", "status": "läuft", "seit": "2026-11-10T08:15:00" },
+  { "name": "Beispiel-Agent Dokumente", "aufgabe": "Prüft QM-Dokumente auf veraltete Stände", "status": "läuft", "seit": "2026-11-10T09:40:00" },
+  { "name": "Beispiel-Agent Postfach", "aufgabe": "Sortiert eingehende Nachrichten vor", "status": "wartet", "seit": "2026-11-10T07:00:00" },
+  { "name": "Beispiel-Agent Sicherung", "aufgabe": "Erstellt die tägliche Datensicherung", "status": "gestoppt", "seit": "2026-11-10T03:05:00" }
+]

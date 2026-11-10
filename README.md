@@ -34,3 +34,6 @@ VITE_API_BASE_URL=<https://your-api.azurewebsites.net>
 - Keycloak wird nicht benötigt; Auth läuft über Entra ID.
 - Backend-API (Node/Fastify) anschließen und in `VITE_API_BASE_URL` referenzieren.
 - Rollen/Claims in Entra ID definieren und im UI auswerten.
+
+## Agentic OS (lokale Übersicht)
+Kleine Zusatz-App nur für den eigenen Rechner: `node agentic-os/server.mjs` → http://127.0.0.1:4747. Details in [agentic-os/README.md](agentic-os/README.md).
