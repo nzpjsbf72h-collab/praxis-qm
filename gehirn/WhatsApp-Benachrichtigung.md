@@ -2,7 +2,7 @@
 
 > **Steckbrief**
 > - Thema: Idee – zuständige Mitarbeitende per WhatsApp benachrichtigen, wenn ein Fachgeschäft im Portal ein Problem meldet
-> - Stand: 2026-11-11, nur besprochen, noch nicht gebaut; offen ist, welches Portal gemeint ist (Praxis Portal oder ein Portal fürs Backhaus Mahl)
+> - Stand: 2026-11-11 – **GEPLANT, später einbauen** (ausdrücklicher Wunsch). Noch nicht gebaut. Offen: welches Portal (Praxis Portal oder ein Portal fürs Backhaus Mahl)
 > - Verwandt: [[Praxis Portal]], [[Sicherheit]], [[Agenten]]
 
 - Ablauf: Meldung im Portal → Backend speichert sie → sucht die zuständige Person (je Fachgeschäft oder Thema) → schickt eine WhatsApp über die offizielle WhatsApp-Business-Schnittstelle von Meta (Cloud API).
@@ -22,3 +22,13 @@
 - Das Portal bestätigt per WhatsApp, was es geändert hat, mit Möglichkeit zum Rückgängig-Machen. Jede Änderung wird mit Uhrzeit protokolliert.
 - Einfachere Alternative ohne KI: Antwort-Knöpfe in der WhatsApp („Techniker angerufen“, „Erledigt“, „Brauche Hilfe“).
 - Datenschutz: Bei KI-Auswertung geht der Antworttext an den KI-Anbieter; Auftragsverarbeitung klären.
+
+## Vereinbarter Plan (2026-11-11)
+
+1. Grundgerüst ohne echten Versand bauen, damit der Ablauf gefahrlos getestet werden kann.
+2. Benachrichtigung per WhatsApp-Vorlage an die zuständige Person.
+3. Antworten zuerst über Knöpfe („Techniker angerufen“, „Erledigt“, „Brauche Hilfe“).
+4. Erst danach KI für freien Text – nur Auswahl aus der festen Stand-Liste.
+5. Später: Vertretung bei fehlender Reaktion, E-Mail als Ersatzweg.
+
+Vor dem Start klären: Portal, Meta-Business-Konto und eigene Nummer, Datenschutz (Meta, KI-Anbieter), Preise bei Meta.
