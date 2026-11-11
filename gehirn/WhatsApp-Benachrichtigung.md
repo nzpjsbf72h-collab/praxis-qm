@@ -12,3 +12,13 @@
 - In die Nachricht nur das Nötigste: wer meldet, Art des Problems, Link ins Portal. Keine Kunden-, Gesundheits- oder Personaldaten.
 - Der Zugangsschlüssel für Meta gehört in Azure Key Vault, nie in Code, Git oder dieses Gehirn (siehe [[Sicherheit]]).
 - Ausbaustufen: Knopf „Übernehme ich“ in der WhatsApp (braucht eine öffentlich erreichbare Rückmelde-Adresse), Eskalation an eine Vertretung, wenn nach X Minuten niemand reagiert, E-Mail als Ersatz.
+
+## Antworten per WhatsApp (Idee, Stand 2026-11-11)
+
+- Antwortet die zuständige Person, schickt Meta die Nachricht an eine öffentlich erreichbare Rückmelde-Adresse (Webhook) des Portal-Backends.
+- Das Backend prüft zuerst die Signatur von Meta, dann die Absendernummer: Nur die zuständige Person darf den Stand dieser Meldung ändern.
+- Zuordnung zur Meldung über die Antwort-Funktion von WhatsApp (die Antwort verweist auf die ursprüngliche Nachricht) oder über eine Meldungsnummer im Text.
+- Eine KI ordnet den freien Text nur einem Stand aus einer festen Liste zu (z. B. „Techniker beauftragt“, „Erledigt“). Sie darf sonst nichts tun. Ist sie unsicher, fragt das Portal zurück.
+- Das Portal bestätigt per WhatsApp, was es geändert hat, mit Möglichkeit zum Rückgängig-Machen. Jede Änderung wird mit Uhrzeit protokolliert.
+- Einfachere Alternative ohne KI: Antwort-Knöpfe in der WhatsApp („Techniker angerufen“, „Erledigt“, „Brauche Hilfe“).
+- Datenschutz: Bei KI-Auswertung geht der Antworttext an den KI-Anbieter; Auftragsverarbeitung klären.
